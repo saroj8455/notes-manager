@@ -14,6 +14,8 @@ import * as uuid from 'uuid';
 import { StatusCodes } from 'http-status-codes';
 import sharp from 'sharp';
 
+import notesRoutes from './routes/notes';
+
 const app = express();
 
 // Middleware
@@ -41,6 +43,9 @@ const accessLogStream = fs.createWriteStream(path.join(logsFolder, filename), {
   flags: 'a',
 });
 app.use(morgan('combined', { stream: accessLogStream }));
+
+// Define all routes
+app.use('/api/notes', notesRoutes);
 
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
   res.status(200).jsonp({
@@ -76,7 +81,7 @@ app.post(
         .webp({ quality: 20 })
         .toFile('./public/assets/' + ref);
       const link = `http://localhost:${port}/public/assets/${ref}`;
-      return res.json({ link });
+      return res.status(StatusCodes.ACCEPTED).json({ link });
       // res.status(StatusCodes.OK).jsonp({
       //   message: 'Image Captured Successfully',
       // });
