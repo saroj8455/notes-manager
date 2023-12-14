@@ -12,7 +12,9 @@ app.use(express.json());
 
 app.use('/', (req: Request, res: Response, next: NextFunction) => {
   res.status(200).jsonp({
-    message: 'Server is running',
+    message: 'Server is running.....',
+    timezone: process.env.TZ,
+    timestamp: new Date(),
   });
 });
 
