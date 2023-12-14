@@ -4,12 +4,17 @@ import createHttpError, { isHttpError } from 'http-errors';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
 import { errorHandeler } from './middleware/error.handeler';
+import cors from 'cors';
+import helmet from 'helmet';
 
 const app = express();
 
-app.use(morgan('dev'));
-
+// Middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(morgan('dev'));
+app.use(cors());
+app.use(helmet());
 
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
   res.status(200).jsonp({
