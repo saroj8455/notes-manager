@@ -17,3 +17,18 @@ Content-Type: application/json
   "title": "Create a contact Manager App.",
   "body": "Hi Test . Email"
 }
+
+### Update a note byID
+
+PUT  {{base_url}}/101
+Content-Type: application/json
+
+{
+  "title": "Create a contact Manager App.",
+  "body": "Hi Test . Email"
+}
+
+
+
+### Delete note by note id
+DELETE  {{base_url}}/101

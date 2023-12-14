@@ -42,7 +42,10 @@ export const updateNote = async (
   res: Response,
   next: NextFunction
 ) => {
-  return res.status(StatusCodes.ACCEPTED);
+  return res.status(StatusCodes.ACCEPTED).jsonp({
+    updateNote: req.body,
+    noteId: req.params.noteId,
+  });
 };
 
 export const deleteNote = async (
@@ -50,5 +53,7 @@ export const deleteNote = async (
   res: Response,
   next: NextFunction
 ) => {
-  return res.status(StatusCodes.OK);
+  return res.status(StatusCodes.OK).jsonp({
+    noteId: req.params.noteId,
+  });
 };
