@@ -14,7 +14,9 @@ const startApp = async () => {
     console.log(`Connected to Remote Host : ${conn.connection.host}`);
     // Start the server
     app.listen(PORT, () => {
-      console.log(`Server is running under http://localhost:${PORT}`);
+      console.log(
+        `⚡️[server]: Server is running under http://localhost:${PORT}`
+      );
     });
   } catch (error) {
     console.log('Unable to start App', error);
