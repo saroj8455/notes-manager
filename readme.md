@@ -59,3 +59,30 @@ Content-Type: application/json
 ### GET Request - Specific User Endpoint ###
 GET {{base_url}}/users/123
 ```
+
+### Mongoose model example using typescript.
+
+```typescript
+import { Document, Schema, model } from 'mongoose';
+
+// Interface representing the user structure
+interface User extends Document {
+  username: string;
+  email: string;
+  password: string;
+  // You can add other fields as needed
+}
+
+// Define a mongoose schema based on the interface
+const UserSchema = new Schema<User>({
+  username: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true },
+  // Define other schema fields here
+});
+
+// Create and export the Mongoose model
+const UserModel = model<User>('User', UserSchema);
+
+export default UserModel;
+```

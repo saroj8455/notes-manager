@@ -5,7 +5,7 @@
 GET {{base_url}}
 
 ### Get notes by note id
-GET {{base_url}}/101
+GET {{base_url}}/657bd4fc6c1950e8aa6ced5f
 
 
 ### Create a note
@@ -15,7 +15,7 @@ Content-Type: application/json
 
 {
   "title": "Create a contact Manager App.",
-  "body": "Hi Test . Email"
+  "text": "Tech: Angular, Reactjs and Nodejs"
 }
 
 ### Update a note byID
@@ -25,7 +25,7 @@ Content-Type: application/json
 
 {
   "title": "Create a contact Manager App.",
-  "body": "Hi Test . Email"
+  "text": "Hi Test . Email"
 }
 
 
