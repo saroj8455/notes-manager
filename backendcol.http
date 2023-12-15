@@ -14,8 +14,8 @@ POST {{base_url}}
 Content-Type: application/json
 
 {
-  "title": "Create a contact Manager App.",
-  "text": "Tech: Angular, Reactjs and Nodejs"
+  "title": "Test _V1",
+  "text": "Test _V1"
 }
 
 ### Update a note byID
@@ -31,4 +31,4 @@ Content-Type: application/json
 
 
 ### Delete note by note id
-DELETE  {{base_url}}/101
+DELETE  {{base_url}}/657c11434abf20319dc5a341

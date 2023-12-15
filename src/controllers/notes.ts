@@ -100,7 +100,19 @@ export const deleteNote = async (
   res: Response,
   next: NextFunction
 ) => {
-  return res.status(StatusCodes.OK).jsonp({
-    noteId: req.params.noteId,
-  });
+  const noteId = req.params.noteId;
+  try {
+    // Check existing note
+    const note = await NoteModel.findById(noteId);
+
+    if (!note)
+      throw createHttpError(StatusCodes.NOT_FOUND, `${noteId} not exist`);
+    const deleteResp = await NoteModel.findByIdAndDelete(noteId);
+    return res.status(StatusCodes.OK).jsonp({
+      noteId: req.params.noteId,
+      deleteResp,
+    });
+  } catch (error) {
+    next(error);
+  }
 };
