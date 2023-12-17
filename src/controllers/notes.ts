@@ -2,7 +2,6 @@ import { NextFunction, Request, RequestHandler, Response } from 'express';
 
 import { StatusCodes } from 'http-status-codes';
 import NoteModel from '../models/notes.model';
-import { log } from 'console';
 import createHttpError from 'http-errors';
 import mongoose from 'mongoose';
 import { checkEmpty, checkMongoObjectId } from '../utils/common.util';

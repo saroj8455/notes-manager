@@ -32,3 +32,16 @@ Content-Type: application/json
 
 ### Delete note by note id
 DELETE  {{base_url}}/657c11434abf20319dc5a341
+
+
+### Notes Users
+
+
+POST http://localhost:8004/api/noteusers/
+Content-Type: application/json
+
+{
+  "username": "tomdech",
+  "email": "tomdech@gmail.com",
+  "password": "admin@123"
+}

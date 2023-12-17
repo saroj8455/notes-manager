@@ -15,6 +15,7 @@ import { StatusCodes } from 'http-status-codes';
 import sharp from 'sharp';
 
 import notesRoutes from './routes/notes';
+import userRoutes from './routes/users';
 
 const app = express();
 
@@ -46,6 +47,7 @@ app.use(morgan('combined', { stream: accessLogStream }));
 
 // Define all routes
 app.use('/api/notes', notesRoutes);
+app.use('/api/noteusers', userRoutes);
 
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
   res.status(200).jsonp({
