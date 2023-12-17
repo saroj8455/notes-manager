@@ -38,11 +38,12 @@ DELETE  {{base_url}}/657c11434abf20319dc5a341
 
 
 POST http://localhost:8004/api/noteusers/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoidG9tZGVjaEBnbWFpbC5jb20iLCJpYXQiOjE3MDI3ODQ3OTMsImV4cCI6MTcwMjc4ODM5M30.omGchd-jzr3UPuI1qcNRpi-NFXkyvxQzzG966Jug9_U
 Content-Type: application/json
 
 {
-  "username": "tomdech",
-  "email": "tomdech@gmail.com",
+  "username": "ocemdev",
+  "email": "ocem.blgr2023@gmail.com",
   "password": "admin@123"
 }
 
