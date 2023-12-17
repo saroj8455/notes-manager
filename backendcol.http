@@ -34,7 +34,7 @@ Content-Type: application/json
 DELETE  {{base_url}}/657c11434abf20319dc5a341
 
 
-### Notes Users
+### Notes Users Registration
 
 
 POST http://localhost:8004/api/noteusers/
@@ -43,5 +43,15 @@ Content-Type: application/json
 {
   "username": "tomdech",
   "email": "tomdech@gmail.com",
+  "password": "admin@123"
+}
+
+### Notes Users Auth
+
+POST http://localhost:8004/api/noteusers/auth
+Content-Type: application/json
+
+{
+  "username": "tomdech",
   "password": "admin@123"
 }

@@ -7,6 +7,7 @@ const router = express.Router();
 // router.get('/', NotesController.getNotes);
 // router.get('/:noteId', NotesController.getNoteById);
 router.post('/', UsersController.createUser);
+router.post('/auth', UsersController.authUser);
 // router.put('/:noteId', NotesController.updateNote);
 // router.delete('/:noteId', NotesController.deleteNote);
 
