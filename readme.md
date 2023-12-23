@@ -86,3 +86,7 @@ const UserModel = model<User>('User', UserSchema);
 
 export default UserModel;
 ```
+
+#### express req.body validator like joi example
+
+`https://dev.to/itnext/joi-awesome-code-validation-for-node-js-and-express-35pk`
